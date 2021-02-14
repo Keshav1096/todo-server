@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
+const db_dev = process.env.DB_DEV;
 
-mongoose.connect('mongodb://127.0.0.1:27017/cryptodb', { useNewUrlParser: true, useUnifiedTopology: true }).catch(e => {
+mongoose.connect(db_dev, { useNewUrlParser: true, useUnifiedTopology: true }).catch(e => {
     console.error('Connection error', e.message)
 });
 
